@@ -1,0 +1,20 @@
+<html lang="en">
+
+<body style="background-color:rgb(7, 92, 107);">
+    <center>
+        {%block content%}
+    <br/>
+<form action="login" method="POST" style="width: 350px;height: 250px; border-style: groove; border-radius: 25px;background-color: rgb(243, 245, 247);">
+    {%csrf_token%}
+    <h3>Login Page</h3><hr style="height:30px">
+    <label for="username1">Username</label>
+    <input type="text" name="user" id="username1"> <br><br/>
+    <label for="password1">Password</label>
+    <input type="password" name="password" id="password1"><br><br><br/><br/>
+    <input type="submit" name="submit"><br>
+</form>
+</center>
+{{error}}
+{%endblock%}
+</body>
+</html>

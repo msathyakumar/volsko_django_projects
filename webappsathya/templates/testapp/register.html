@@ -1,0 +1,28 @@
+<html>
+    <body style="background-color:rgb(7, 92, 107);">
+        
+   
+<center>
+    <h1 style="color: white;">Registration form</h1>
+<form action="register" method="POST" style="width: 500px; border-style: groove;background-color: aliceblue; border-radius: 25px;">
+    {%csrf_token%}
+    <br/>
+    <label for="name">Name :</label>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="text" name="Name" id="name"><br>
+    <label for="email">Email :</label>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="email" name="Email" id="email"><br>
+    <label for="user">username :</label>&nbsp;
+    <input type="text" name="username" id="user"><br>
+    <label for="password1">Pwd :</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="password" name="password1" id="password"><br>
+    <label for="password2">Con Pwd :</label>&nbsp;
+    <input type="password" name="password2" id="password2"><br>
+    <label for="Role">Role :</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="text" name="Role" id="Role"><br>
+    <br/>
+    <input type="submit" name="submit">
+</form>
+</center>
+ <center>{{name}}</center>
+</body>
+</html>
