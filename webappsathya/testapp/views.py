@@ -42,10 +42,16 @@ def register_page(request):
                     print('email exist')
                     return render(request,'testapp/register.html',{'name':'email already exist'})
                 else:
-                    user = User.objects.create_user(username=name,password=password1,email=email)
-                    user.save()
-                    print('user created')
-                return redirect('/')
+                    if role_1=='admin':
+                        user = User.objects.create_superuser(username=name,password=password1,email=email)
+                        user.save()
+                        print('superuser created')
+                        return redirect('/')
+                    else:
+                        user = User.objects.create_user(username=name,password=password1,email=email)
+                        user.save()
+                        print('user created')
+                        return redirect('/')
             else :
                 print('password is incorrect')
                 return render(request,'testapp/register.html',{'name':'password didnot match'})
